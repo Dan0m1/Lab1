@@ -3,7 +3,7 @@
     {
         public static void Main(string[] args)
         {
-            string path = "C:\\Users\\servo\\source\\repos\\Lab1\\Lab1\\Files\\";
+            string path = "/*path to the 'Files' directory*/";
 
           //  List<string> C1 = Task1(path);
 
