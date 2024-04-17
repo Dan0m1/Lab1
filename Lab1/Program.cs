@@ -1,15 +1,18 @@
-﻿namespace Lab1 {
+﻿using System.Text.Json;
+using System.Text.Json.Nodes;
+
+namespace Lab1 {
     class Program
     {
         public static void Main(string[] args)
         {
-            string path = "/*path to the 'Files' directory*/";
+            string path = "*path to the 'Files' directory*";
 
           //  List<string> C1 = Task1(path);
 
            // Dictionary<string, List<string>> dictionary = Task2(path);
 
-            Console.WriteLine(Task3(path));
+            //Console.WriteLine(Task3(path));
         }
 
         static List<string> Task1(string path)
@@ -76,6 +79,14 @@
                     dict.Add(line, list2);
                 }
             }
+
+            string json = JsonSerializer.Serialize(dict);
+
+            using (StreamWriter writer = new StreamWriter(path + "JSON.json", false))
+            {
+                writer.Write(json);
+            }
+            
             return dict;
         }
 
